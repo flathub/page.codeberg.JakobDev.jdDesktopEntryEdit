@@ -4,7 +4,7 @@ runtime-version: '6.4'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
 base-version: '6.4'
-command:  jdDesktopEntryEdit
+command: jdDesktopEntryEdit
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
 build-options:
@@ -27,21 +27,19 @@ modules:
         url: https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.26.tar.xz
         sha256: b26dbde79ea72c8c84fb7f9d870ffd857381d049a86d25e0038c4cef4c747309
         x-checker-data:
-            type: anitya
-            project-id: 421
-            url-template: https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-$version.tar.xz
+          type: anitya
+          project-id: 421
+          url-template: https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-$version.tar.xz
 
   - name: jdDesktopEntryEdit
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
-      - install -Dm644 jdDesktopEntryEdit/Icon.svg  $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
-      - install -Dm644 deploy/page.codeberg.JakobDev.jdDesktopEntryEdit.desktop -t $FLATPAK_DEST/share/applications
-      - install -Dm644 deploy/page.codeberg.JakobDev.jdDesktopEntryEdit.metainfo.xml -t $FLATPAK_DEST/share/metainfo
+      - pip install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
+      - python ./install-unix-datafiles.py --prefix=$FLATPAK_DEST
     sources:
       - type: git
         url: https://codeberg.org/JakobDev/jdDesktopEntryEdit.git
-        tag: '1.0'
-        commit: 570eecd79b766499e2aaec1e66a251eae8b15032
+        tag: '1.1'
+        commit: 3bb81a17f7a827116d23008f38017ff3ee367705
         x-checker-data:
-            type: git
+          type: git
