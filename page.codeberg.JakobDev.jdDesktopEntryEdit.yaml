@@ -34,12 +34,8 @@ modules:
   - name: jdDesktopEntryEdit
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
-      - install -Dm644 jdDesktopEntryEdit/Icon.svg  $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
-      - install -Dm644 deploy/page.codeberg.JakobDev.jdDesktopEntryEdit.desktop -t
-        $FLATPAK_DEST/share/applications
-      - install -Dm644 deploy/page.codeberg.JakobDev.jdDesktopEntryEdit.metainfo.xml
-        -t $FLATPAK_DEST/share/metainfo
+      - pip install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
+      - python ./install-unix-datafiles.py --prefix=$FLATPAK_DEST
     sources:
       - type: git
         url: https://codeberg.org/JakobDev/jdDesktopEntryEdit.git
