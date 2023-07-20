@@ -39,7 +39,7 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/JakobDev/jdDesktopEntryEdit.git
-        tag: '1.1'
-        commit: 3bb81a17f7a827116d23008f38017ff3ee367705
+        tag: '1.2'
+        commit: a9f99ad390241796c334eb4d76d79512722090e5
         x-checker-data:
           type: git
