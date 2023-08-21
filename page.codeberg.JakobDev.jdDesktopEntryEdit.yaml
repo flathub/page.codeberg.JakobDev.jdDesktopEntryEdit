@@ -37,9 +37,11 @@ modules:
       - pip install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
       - python ./install-unix-datafiles.py --prefix=$FLATPAK_DEST
     sources:
-      - type: git
-        url: https://codeberg.org/JakobDev/jdDesktopEntryEdit.git
-        tag: '1.2'
-        commit: a9f99ad390241796c334eb4d76d79512722090e5
+      - type: archive
+        url: https://codeberg.org/JakobDev/jdDesktopEntryEdit/archive/1.2.tar.gz
+        sha256: 0c949570a05632f17772eb7bcea3f711909964e718b593f61c47a5b44d3b33f0
         x-checker-data:
-          type: git
+          type: json
+          url: https://codeberg.org/api/v1/repos/JakobDev/jdDesktopEntryEdit/releases/latest
+          version-query: .tag_name
+          url-query: .tarball_url
