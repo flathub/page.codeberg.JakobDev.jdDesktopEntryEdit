@@ -38,8 +38,8 @@ modules:
       - python ./install-unix-datafiles.py --prefix=$FLATPAK_DEST
     sources:
       - type: archive
-        url: https://codeberg.org/JakobDev/jdDesktopEntryEdit/archive/1.4.tar.gz
-        sha256: 34f9fdb00df9dc54e2edfab308ebb3e1fc1d0cca5e7156fe821d80c624fd5639
+        url: https://codeberg.org/JakobDev/jdDesktopEntryEdit/archive/1.5.tar.gz
+        sha256: ab75e16d9dc01b41faa05bb393c031436764578481cb0524c2a1354cdf50b7de
         x-checker-data:
           type: json
           url: https://codeberg.org/api/v1/repos/JakobDev/jdDesktopEntryEdit/releases/latest
