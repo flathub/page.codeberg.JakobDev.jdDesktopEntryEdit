@@ -1,4 +1,4 @@
-# Generated with flatpak-pip-generator --yaml --checker-data desktop-entry-lib requests
+# Generated with flatpak-pip-generator --yaml --checker-data --cleanup scripts desktop-entry-lib requests
 build-commands: []
 buildsystem: simple
 modules:
@@ -15,6 +15,9 @@ modules:
           name: desktop_entry_lib
           packagetype: bdist_wheel
           type: pypi
+    cleanup:
+      - /bin
+      - /share/man/man1
   - name: python3-requests
     buildsystem: simple
     build-commands:
@@ -32,7 +35,7 @@ modules:
         url: https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz
         sha256: ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5
         x-checker-data:
-          name: charset-normalizer
+          name: charset_normalizer
           type: pypi
       - type: file
         url: https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl
@@ -55,4 +58,7 @@ modules:
           name: urllib3
           packagetype: bdist_wheel
           type: pypi
+    cleanup:
+      - /bin
+      - /share/man/man1
 name: python3-modules
